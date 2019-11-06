@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="exam_uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:exam_uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:entity="using:exam_uwp.Entities"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <ScrollViewer.Content>
+            <StackPanel>
+                
+                <Grid Height="691" >
+                    <StackPanel >
+                        <ListView x:ConnectionId='4' x:Name="outPutContact">
+                            <ListView.ItemTemplate>
+                                <DataTemplate                             >
+                                    <StackPanel >
+                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock Text="{Binding PhoneNumber}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton x:ConnectionId='2' Margin="20"                                 >Add Contact</HyperlinkButton>
+                    <HyperlinkButton x:ConnectionId='3' Margin="20"                                    >Search Contact</HyperlinkButton>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer.Content>
+    </ScrollViewer>
+</Page>
+
